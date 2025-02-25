@@ -1,0 +1,21 @@
+a:hover {
+
+    color:aqua;
+}
+/*Child Selecter*/
+ul>li{
+    font-weight: bold;
+}
+h1+p{
+background-color: orange;
+}
+li:nth-child(4) {
+    background-color: aqua;
+}
+li::before{
+    content: "🚀";
+
+}
+Li::after{
+    content:"🚀";
+}
