@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time real time and says good evening etc</title>
+</head>
+<body>
+    <p>Click the button to greet you in your timezone.</p>
+    <button onclick="myFunction()">Try this</button>
+    <p id="hour"></p>
+    <p id="greet"></p>
+    <script>
+        function myFunction() { var greeting;
+            var time = new Date().getHours();
+            if (time < 10) {
+                greeting = "Good morning";
+            }
+            else if (time < 20){
+                greeting = "Good day";
+            }
+            else 
+            greeting = "good evening"
+        document.getElementById("hour").innerHTML = "Current hour is :" + time;
+        document.getElementById("greet").innerHTML = greeting;
+           }
+    </script>
+</body>
+</html>
