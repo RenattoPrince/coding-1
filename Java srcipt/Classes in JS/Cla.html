@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Ages in JS Code</title>
+    </head>
+    <body>
+        <h1>Javascript class</h1>
+        <p>How to use Javascript class</p>
+        <p id="Person1">
+        </p>
+        <p id="Person2">
+        </p>
+        <script>
+            class Person {
+                constructor(name, year) {
+                    this.name = name
+                    this.year = year
+                }
+                age(){
+                    let date = new Date();
+                    return date.getFullYear() - this.year;
+                }
+            }
+            Person1 = new Person("James", 2010);
+            document.getElementById("Person1").innerHTML = "My name is " + Person1.name + ". I'm born in " + Person1.year + ". And my age is " + Person1.age()
+        </script>
+    </body>
+</html>
