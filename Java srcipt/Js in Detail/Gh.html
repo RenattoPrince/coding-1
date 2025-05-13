@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Saerching a string a replace it.
+        </title>
+    </head>
+    <body>
+        <p id="search_result"></p>
+        <p id="replace_result"></p>
+        <p id="string_result"></p>
+        <script>
+            var str ="hello how are you doing for the day"
+            var search_postion = str.search("how");
+            var txt =str.replace("hoa are" , "how are you")
+            var x = 70;
+            var y = 90;
+            document.getElementById("search_result").innerHTML = search_postion;
+            document.getElementById("replace_result").innerHTML = txt;
+            
+            document.getElementById("string_result").innerHTML = String(x) + String(y);
+        </script>
+
+    </body>
+</html>
