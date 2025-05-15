@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>JSON</title>
+    </head>
+    <body>
+        <h1>JSON</h1>
+        <h2>Convert a JS object into JSON string and send it to the server. </h2>
+        <p id="result"></p>
+        <p id="results"></p>
+        <script>
+            var myObj = { name: "Jason", age: 12, grade: 7};
+            var myJSON = JSON.stringify(myObj);
+            var newObj = JSON.parse(myJSON);
+            document.getElementById("result").innerHTML = newObj.name;
+            document.getElementById("results").innerHTML = myJSON;
+        </script>
+    </body>
+</html>
