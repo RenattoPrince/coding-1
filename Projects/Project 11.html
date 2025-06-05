@@ -15,6 +15,7 @@
     <h1>We need your age and name for better soupport</h1>
      <form name="myform" onsubmit="validateForm()">
             Name: <input type="text" name="fname">
+            Age: <input type="number" name="age">
             <input type="submit" value="Submit">
             <p id="message"></p>
         </form>
@@ -22,29 +23,21 @@
         <script>
             function validateForm() {
                 var x = document.forms["myform"]["fname"].value;
+                var age = document.forms["myform"]["age"].value;
+                if (age < 18) {
+                    alert("You must be at least 18 years old to submit this form.");
+                    return false;
+                    
+                }else document.write("Age submitted: " + age);
                 if (x =="") {
                     alert("Name must be filled out");
                     return false;
                 }
-                else document.write("Name submitted")
+                else document.write("<br>Name submitted  : " + x);
             }
 
-        </script>
-          <form name="my" onsubmit="validateForm()">
-            Name: <input type="text" name="fname">
-            <input type="submit" value="Submit">
-            <p id="message"></p>
-        </form>
-
-        <script>
-            function validateForm() {
-                var x = document.forms["myform"]["fname"].value;
-                if (x =="") {
-                    alert("Name must be filled out");
-                    return false;
-                }
-                else document.write("Name submitted")
-            }
+       
+         
         </script>
 </body>
 </html>
