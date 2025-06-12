@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense app</title>
+    <style>
+        h1 {
+            text-decoration: underline;
+            font-style: italic;
+            text-align: center;
+        }
+        p {
+            font-size: 20px;
+            color: rgb(255, 196, 1);
+            text-decoration: underline;
+        }
+        body {
+            background-color: rgb(64, 188, 255);
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Expense tracker app</h1>
+    <p>Add your amount of money down here</p>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <button onclick="addExpense()">Add Expense</button>
+    <button onclick="showExpenses()">Show Expenses</button>
+    <button onclick="clearExpenses()">Clear Expenses</button>
+    <ul id="expenseList"></ul>
+    <script>
+        let expenses = [];
+
+        function addExpense() {
+            const amountInput = document.getElementById('amount');
+            const amount = parseFloat(amountInput.value);
+            if (!isNaN(amount) && amount > 0) {
+                expenses.push(amount);
+                amountInput.value = '';
+                alert('Expense added: ' + amount);
+            } else {
+                alert('Please enter a valid amount.');
+            }
+        }
+
+        function showExpenses() {
+            const expenseList = document.getElementById('expenseList');
+            expenseList.innerHTML = '';
+            if (expenses.length === 0) {
+                expenseList.innerHTML = '<li>No expenses recorded.</li>';
+            } else {
+                expenses.forEach((expense, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `Expense ${index + 1}: $${expense.toFixed(2)}`;
+                    expenseList.appendChild(li);
+                });
+            }
+        }
+
+        function clearExpenses() {
+            expenses = [];
+            document.getElementById('expenseList').innerHTML = '';
+            alert('All expenses cleared.');
+        }
+        </script>
+</body>
+<footer>
+    <p>Created by: Renatto</p>
+</footer>
+</html>
