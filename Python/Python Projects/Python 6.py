@@ -1,33 +1,19 @@
-import random
-import string
 
 from tkinter import *
+import random,string
+
+def Random():
+    chars = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choices(chars, k=12))
+    textbox.delete("1.0", END)
+    textbox.insert(END, password)
+
 w=Tk()
-w.title("Intro to Tkinter")
-w.geometry("50x40")
+w.title("Random password generator")
+w.geometry("700x600")
+button=Button(text="Click for a random password",bg='orange',fg='black', command=Random)
 
-def generate_password(length=12):
-    if length < 4:
-        raise ValueError("Password length should be at least 4 characters.")
-
-    # Define character pools
-    letters = string.ascii_letters
-    digits = string.digits
-    symbols = string.punctuation
-
-    # Ensure password has at least one of each type
-    password = [
-        random.choice(letters),
-        random.choice(digits),
-        random.choice(symbols),
-        random.choice(letters + digits + symbols)
-    ]
-
-    # Fill the rest of the password length
-    password += random.choices(letters + digits + symbols, k=length - 4)
-    random.shuffle(password)
-
-    return ''.join(password)
-
-# Example usage
-print("Your random password:", generate_password(16))
+button.pack()
+textbox=Text(w, fg='White',bg='black')
+textbox.pack()
+w.mainloop()
