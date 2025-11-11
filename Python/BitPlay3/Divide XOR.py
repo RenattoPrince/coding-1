@@ -1,0 +1,24 @@
+def divide(ourdividend, ourDivisor):
+
+    sign = -1 if ((ourdividend < 0) ^ (ourDivisor < 0)) else 1
+
+
+    ourdividend = abs(ourdividend)
+    ourDivisor = abs(ourDivisor)
+    qoutientNumber = 0
+    tempNumber = 0 
+
+    for i in range(31, -1, -1):
+        if (tempNumber + (ourDivisor << i) <= ourdividend):
+            tempNumber += ourDivisor << i
+            qoutientNumber |= 1 << i
+
+
+    if sign == -1:
+        qoutientNumber = -qoutientNumber
+
+    return qoutientNumber
+
+a = int(input("Enter a for a\b:"))
+b = int(input("Enter b for a\b:"))
+print("Result of", a, "/", b, "is", divide(a, b))
