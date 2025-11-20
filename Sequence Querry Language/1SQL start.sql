@@ -16,7 +16,7 @@ select * from students;
 select * from students
 where age>=17;
 
-DROP TABLE students;
+
 
 
 select name,grade
