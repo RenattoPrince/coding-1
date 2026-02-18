@@ -19,6 +19,16 @@ def marks_line_chart():
   plt.title("Students Marks Graph")
   plt.xlabel("Students Names")
   plt.ylabel("Students Marks")
-
   plt.show()
 marks_line_chart()
+
+#Bar chart
+
+def percentage_bar_chart():
+  plt.bar(students_names, students_marks)
+  plt.title("Students marks in a bar chart")
+  plt.xlabel("Students Names")
+  plt.ylabel("Students marks")
+
+  plt.show()
+percentage_bar_chart()
