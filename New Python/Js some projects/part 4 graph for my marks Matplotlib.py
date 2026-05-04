@@ -3,8 +3,8 @@ from datetime import datetime
 
 #This time I am making a scatter graph for my percenatge of grades for maths from start of year 8 to present marks.
 
-My_Marks=[66, 83, 75, 20, 50, 60, 71, 50, 0, 75, 80, 78, 50, 80, 80] # These are the marks
-Time_OF_MARKS_returned=["18/09/25", "18/09/25", "18/09/25", "18/09/25", "18/09/25", "15/10/25", "21/10/25", "21/10/25", "21/10/25", "21/10/25", "19/11/25", "12/12/25", "27/01/26", "28/01/26", "10/02/26"] # these are the time of when the marks got returned
+My_Marks=[66, 83, 75, 20, 50, 60, 71, 50, 0, 75, 80, 78, 50, 80, 80, 100, 100, 0, 50] # These are the marks
+Time_OF_MARKS_returned=["18/09/25", "18/09/25", "18/09/25", "18/09/25", "18/09/25", "15/10/25", "21/10/25", "21/10/25", "21/10/25", "21/10/25", "19/11/25", "12/12/25", "27/01/26", "28/01/26", "10/02/26", "23/03/26", "23/03/26", "23/03/26", "23/03/26"] # these are the time of when the marks got returned
 
 # Convert strings to actual date objects
 dates = [datetime.strptime(d, "%d/%m/%y") for d in Time_OF_MARKS_returned]
