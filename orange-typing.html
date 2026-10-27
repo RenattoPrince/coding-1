@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <body>
+    <button id="orangeButton">Make typing orange</button>
+    <br><br>
+    <textarea id="typingBox" rows="6" placeholder="Type here..."></textarea>
+
+    <script>
+      const box = document.getElementById("typingBox");
+
+      document.getElementById("orangeButton").addEventListener("click", () => {
+        box.style.color = "orange";
+        box.focus();
+      });
+    </script>
+  </body>
+</html>
