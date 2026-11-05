@@ -11,7 +11,7 @@ def details():
         return render_template("index2.html")
     
     location = request.form.get("location", "").strip()
-    if not location():
+    if not location:
         return render_template("index2.html", error="Give the correct location")
     try:
         q = urllib.parse.quote(location)
