@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ''
-    if request.method == 'POST' and 'undername' in request.form and 'password' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
         mydb = mysql.connector.connect(host="relotemysql.com",
@@ -41,11 +41,11 @@ def logout():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     msg = ''
-    if request.method == 'POST' and 'undername' in request.form and 'password' in request.form and 'email' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
-        mydb = mysql.connector.connect(host="relotemysql.com",
+        mydb = mysql.connector.connect(host="remotemysql.com",
                                        user="wXy63pU5g1",
                                        password="qVOgRNMGRK",
                                        database="wXy63pU5g1")
@@ -72,7 +72,7 @@ def register():
             return render_template('index.html', msg=msg, name=name)
     elif request.method == 'POST':
         msg = 'Kindly dill the details !'
-    return render_template('registeration.html', msg=msg)
+    return render_template('registration.html', msg=msg)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('login.html')
